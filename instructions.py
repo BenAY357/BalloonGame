@@ -90,9 +90,8 @@ class Instructions():
         Hence, we are creating lists with the same number of elements as the number of inflations we want. 
         """
 
-        self.display_instructions = DisplayLabelsSequentially(self.display_instructions, 
-                                                                self.seconds_between_instructions, 
-                                                                hide_after_shown = False)
+        
+        
         self.inflation_instructions = DisplayLabelsSequentially(self.inflation_instructions, 
                                                                     self.seconds_between_instructions)
        
@@ -108,11 +107,17 @@ class Instructions():
         self.pop_worker = ReturnListIndexWorker(target_list= [_ for _ in range(self.demo_pop_at)], 
                                             interval = 2) # 2 seconds between each emmision/inflation 
 
-    def play(self):
 
+    
+        self.display_instructions = DisplayLabelsSequentially(self.display_instructions, 
+                                                            self.seconds_between_instructions, 
+                                                            hide_after_shown = False)
+
+    def play(self):
+        
         # Hide buttons
         self.display_instruction_buttons(False)
-
+        enable_inflate_and_bank(False)
         # Hide mouse cursor during the demo so the buttons aren't clicked. 
         # Disabling the buttons won't work as they're reenabled when the trial is reset after the banking demo
 
@@ -127,7 +132,10 @@ class Instructions():
         self.bank_instructions.worker.finished.connect(self.pop_instructions.play) # next, explain popping
         self.pop_instructions.worker.finished.connect(self.pop_balloon) # inflate balloon till it pops
         self.pop_worker.finished.connect(self.reset_instructions)
-                                                 
+
+    def delete_threads(self):
+        self.display_instructions.worker.deleteLater()
+
     def inflate_demo(self): # demonstrate the inflation
         bi.balloon_info.pop_at = self.demo_pop_at
         self.inflate_demo_worker.start()
@@ -138,8 +146,6 @@ class Instructions():
         self.pop_worker.start() # start thread
         self.pop_worker.index_signal.connect(bgb.on_inflate) # inflate every time the signal is emmited
         
-
-
     def reset_instructions(self):
         # Reset trackers
         print("I reset")
@@ -154,6 +160,8 @@ class Instructions():
         window.setCursor(Qt.ArrowCursor)  # show cursor
         for label in self.all_instructions: # hide all instruction labels after done
             label.hide()
+
+        # self.delete_threads()
 
 
 
