@@ -42,11 +42,12 @@ class DisplayLabelsSequentially(): # display labels in a list one at a time
         self.hide_after_shown = hide_after_shown # If True only show one label at a time. 
         self.activation_delay = activation_delay
         self.hide_all() # start with all labels hidden
-
+        
          # Create thread which emits the list's name and all of its indices sequentially (starting from zero) in a signal called index_signal
         self.worker = ReturnListIndexWorker(target_list = self.target_list, # take target list as argument
                                     interval = self.seconds_between_displays,
-                                    activation_delay= self.activation_delay) # interval between signals 
+                                    activation_delay= self.activation_delay) # interval between signals
+        self.worker.finished.connect(self.worker.deleteLater)
     def play(self):
         self.worker.start() # start worker thread 
         self.worker.index_signal.connect(self.show_label) # show label the signal emits (target_list[index])
@@ -73,10 +74,10 @@ class Instructions():
                     seconds_between_instructions,
                     demo_pop_at) -> None:
   
-        self.display_instructions = display_instructions
-        self.inflation_instructions = inflation_instructions
-        self.bank_instructions = bank_instructions
-        self.pop_instructions = pop_instructions
+        self.display_instructions_list = display_instructions
+        self.inflation_instructions_list = inflation_instructions
+        self.bank_instructions_list = bank_instructions
+        self.pop_instructions_list = pop_instructions
         self.seconds_between_instructions = seconds_between_instructions
         self.all_instructions = display_instructions + inflation_instructions + bank_instructions + pop_instructions # store all instruction labes in one list
 
@@ -89,16 +90,39 @@ class Instructions():
         Note that the number of signals emitted is the same as the size of the target list. 
         Hence, we are creating lists with the same number of elements as the number of inflations we want. 
         """
-
         
-        
-        self.inflation_instructions = DisplayLabelsSequentially(self.inflation_instructions, 
-                                                                    self.seconds_between_instructions)
+        # self.inflation_instructions = DisplayLabelsSequentially(self.inflation_instructions, 
+        #                                                             self.seconds_between_instructions)
        
-        self.bank_instructions = DisplayLabelsSequentially(self.bank_instructions, 
+        # self.bank_instructions = DisplayLabelsSequentially(self.bank_instructions, 
+        #                                                     self.seconds_between_instructions)
+
+        # self.pop_instructions = DisplayLabelsSequentially(self.pop_instructions, 
+        #                                                 self.seconds_between_instructions, 
+        #                                                 activation_delay= 1) # give the balloon 1 second to bank before explaining popping
+        
+        # self.inflate_demo_worker = ReturnListIndexWorker(target_list= [_ for _ in range(self.n_demo_inflations)], 
+        #                                             interval = 2) # 2 seconds between each emmision/inflation 
+        # self.pop_worker = ReturnListIndexWorker(target_list= [_ for _ in range(self.demo_pop_at)], 
+        #                                     interval = 2) # 2 seconds between each emmision/inflation 
+        
+
+        # self.display_instructions = DisplayLabelsSequentially(self.display_instructions, 
+        #                                                     self.seconds_between_instructions, 
+        #                                                     hide_after_shown = False)
+    def init_workers(self):
+
+        self.display_instructions = DisplayLabelsSequentially(self.display_instructions_list, 
+                                                            self.seconds_between_instructions, 
+                                                            hide_after_shown = False)
+
+        self.inflation_instructions = DisplayLabelsSequentially(self.inflation_instructions_list, 
+                                                                    self.seconds_between_instructions)
+        print(f"2nd {self.inflation_instructions}")
+        self.bank_instructions = DisplayLabelsSequentially(self.bank_instructions_list, 
                                                             self.seconds_between_instructions)
 
-        self.pop_instructions = DisplayLabelsSequentially(self.pop_instructions, 
+        self.pop_instructions = DisplayLabelsSequentially(self.pop_instructions_list, 
                                                         self.seconds_between_instructions, 
                                                         activation_delay= 1) # give the balloon 1 second to bank before explaining popping
         
@@ -108,13 +132,9 @@ class Instructions():
                                             interval = 2) # 2 seconds between each emmision/inflation 
 
 
-    
-        self.display_instructions = DisplayLabelsSequentially(self.display_instructions, 
-                                                            self.seconds_between_instructions, 
-                                                            hide_after_shown = False)
-
-    def play(self):
         
+    def play(self):
+        self.init_workers()
         # Hide buttons
         self.display_instruction_buttons(False)
         enable_inflate_and_bank(False)
@@ -132,9 +152,6 @@ class Instructions():
         self.bank_instructions.worker.finished.connect(self.pop_instructions.play) # next, explain popping
         self.pop_instructions.worker.finished.connect(self.pop_balloon) # inflate balloon till it pops
         self.pop_worker.finished.connect(self.reset_instructions)
-
-    def delete_threads(self):
-        self.display_instructions.worker.deleteLater()
 
     def inflate_demo(self): # demonstrate the inflation
         bi.balloon_info.pop_at = self.demo_pop_at
@@ -160,12 +177,6 @@ class Instructions():
         window.setCursor(Qt.ArrowCursor)  # show cursor
         for label in self.all_instructions: # hide all instruction labels after done
             label.hide()
-
-        # self.delete_threads()
-
-
-
-  
 
     def display_instruction_buttons(self, display): # display when true, hide when false
         if display:
