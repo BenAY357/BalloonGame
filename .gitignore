@@ -1,0 +1,5 @@
+stuff/
+notes/
+__pycache__/
+data.csv
+tests/
