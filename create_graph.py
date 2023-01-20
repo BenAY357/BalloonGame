@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 import shutil
-
+import experiment_config as exp_cfg
+import matplotlib.ticker as ticker
 
 def main(): # for testing the file when run directly
     list_size = 10
@@ -27,24 +28,29 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
         self.y_label = y_label
         self.x_ax_int = x_ax_int # True- force x axis to only use integers. Can't have decimal places for the balloon number. 
         self.y_ax_int = y_ax_int # True- force y axis to only use integers. Can't have decimal places for the number of pumps. 
-
-    def create_pngs(self): # create pngs
+    def create_png(self): # create pngs
         if os.path.exists(f"{self.gif_name}.gif"):
             os.path.remove(f"{self.gif_name}.gif") # delete the previous participant's gif
-        os.makedirs(f"{self.folder_name}/") # create folder to store the PNGs in
-        # Create graph
+        if not os.path.exists(f"{self.folder_name}/"):
+            os.makedirs(f"{self.folder_name}/") # create folder to store the PNGs in
+
         for i in self.x: 
-            plt.plot(self.x[:i],self.y[:i])
+            
+            ax = plt.figure().gca()
+            ax.yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+            ax.xaxis.set_major_locator(ticker.MaxNLocator(integer=True))
+            plt.bar(self.x[:i],self.y[:i])
             # Add labels
             plt.title(self.title)
             plt.ylabel(self.y_label)
             plt.xlabel(self.x_label)
             # keeping the axis constant makes the gif look nicer. 
             plt.xlim(min(self.x), max(self.x)) 
+            # plt.xticks(range(min(self.x), max(self.x) + 1))
             plt.ylim(0, max(self.y) + 0.5)
+ 
             # save graph
             plt.savefig(f"{self.folder_name}/{i:003}", dpi = 400, facecolor = "white") 
-            plt.figure(figsize=(20, 4))
             plt.close()
 
     def pngs_to_gif(self): # combine the pngs into a gif
@@ -53,6 +59,7 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
         frames = []
         for png in pngs:
             new_frame = Image.open(f"{self.folder_name}/{png}")
+            #new_frame.resize((new_frame.size[0] // 2, new_frame.size[1] // 2), Image.ANTIALIAS)
             frames.append(new_frame)
         # Combine them into a gif
         frames[0].save(self.gif_name, format='GIF', # start from frame 0 (i.e. the first picture)
@@ -64,7 +71,7 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
         shutil.rmtree(f"{self.folder_name}/")
 
     def create_gif(self): # run the two above methods one after the other to create the gif. 
-        self.create_pngs()
+        self.create_png()
         self.pngs_to_gif()
 
 if __name__ == "__main__": 

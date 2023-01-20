@@ -8,11 +8,12 @@ from config import * # objects to be shared across multiple files
 import page_control as pg_ctrl # next and back page functions. 
 from on_submit import * # import functions associated with submitting info/ checking spaces are filled.  
 import radio_btn_question as rad_class
-import tracking as track
+from trial_data import *
 import balloon_info as bi
 import balloon_game_buttons as bg_buttons
 from instructions import *
 import experiment_config as exp_cfg
+
 # from instructions import *
 
 ## Set up
@@ -32,7 +33,7 @@ window.global_next.clicked.connect(pg_ctrl.next_page)
 window.global_previous.clicked.connect(pg_ctrl.back_page)
 
 def print_data():
-    data = {"total_pumps" : track.total_pumps.value, "total_earned": track.total_earned.value}
+    data = {"total_pumps" : trial_data.total_pumps.value, "total_earned": trial_data.total_earned.value}
     print(data)
 
 window.print.clicked.connect(print_data) # print data to check inputs/ outputs during testing. 
@@ -73,8 +74,6 @@ Click next the see a demonstration.
 )
 
 
-
-
 enable_inflate_and_bank(False) # disable inflating and banking during the instructions
 
 # Store instruction labels in list in order of presentation
@@ -92,9 +91,10 @@ instructions = Instructions(display_instructions,
 inflation_instructions,
 bank_instructions,
 pop_instructions,
-seconds_between_instructions=0.5,
-n_demo_inflations=2,
-demo_pop_at=3)
+seconds_between_instructions=.5,
+seconds_between_inflations=1,
+n_demo_inflations=1,
+demo_pop_at=2)
 
 instructions.display_instruction_buttons(False) # start with start game and replay instruction buttons hidden
 
@@ -112,10 +112,10 @@ window.start_game.clicked.connect(instructions.on_start_game)
 
 bi.new_balloon_pixmap(bi.balloon_info.colour)
 
-track.update_tracker_display(0,0,0,1) # start everything at zero except for trial number
+trial_data.update_display(init_display= True) # start everything at zero except for trial number
 
 # Buttons
-
+ 
 window.bank.clicked.connect(bg_buttons.on_bank)
 
 window.inflate.clicked.connect(bg_buttons.on_inflate)
@@ -137,10 +137,17 @@ window.on_likert_submit.clicked.connect(game_feedback.on_radio_questions_submit)
 ## diplay data
 
 def show_graph():
-    graph = QMovie("total.gif")
-    window.graph.setMovie(graph)
-    graph.start()
+    # graph_pixmap = QPixmap("total.gif")
+    # graph_pixmap.geometry()
+    rect = window.graph_label.geometry()
+    size = QSize(rect.width(), rect.height())
+    movie = QMovie("total.gif")
+    window.graph_label.setMovie(movie)
+    movie = window.graph_label.movie()
+    movie.setScaledSize(size)
+    movie.start()
     window.show_data.hide()
+
 
 window.show_data.clicked.connect(show_graph)
 

@@ -1,13 +1,26 @@
 from config import *
 
 
+############################################### Balloon Paramters #####################################################################
+
 ## Balloon parameters
 # keys are the balloon pngs. Value(s) are the pop range. If there is only one value, e.g. [5], the balloon will always pop at value
 balloon_dict = {"pink_balloon.png":[5], "blue_balloon.png":[4,9], "green_balloon.png":[4,8]} 
 n_trials = 4 # number of trials
-money_per_pump = 0.05
+money_per_pump = 0.05 # money per pump
 
-## Animation Paramters
+
+############################################### Instruction Parameters #####################################################################
+
+seconds_between_instructions = .1
+
+seconds_between_instructions = 1
+
+# 
+
+############################################### Animation Paramters #####################################################################
+
+#  Animation Paramters
 
 balloon = window.balloon # label that will act as the balloon
 
@@ -34,6 +47,8 @@ inflation_timer_speed = 150 # time in ms between each increase.
 
 float_up_speed = 50
 float_up_timer_speed = 50
+
+##################################################################################################################################
 
 # Popping 
 
