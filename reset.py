@@ -7,16 +7,17 @@ import page_control as pg_ctrl
 import balloon_info as bi
 import bob_animation as bob
 from config import *
+
 def reset_trial(): # reset trial
     track.append_trial_data() # always add trial data to dictionary
     if track.trial_counter.value == exp_cfg.n_trials: # when its the last trial 
         # Export data
-        df = pd.DataFrame(track.trial_data)
-        if os.path.exists("data.csv"): # only export header for the first participant
-            df.to_csv("data.csv", index=False, mode = "a", header = False)
+        df_trial_data = pd.DataFrame(track.trial_data)
+        df_trial_data.insert(0, "PID", pinfo["PID"]) # add column with the PID at the start to identify the participant. 
+        if os.path.exists("trial_data.csv"): # only export header for the first participant
+            df_trial_data.to_csv("trial_data.csv", index=False, mode = "a", header = False)
         else:
-            df.to_csv("data.csv", index=False, mode = "a", header = True)
-
+            df_trial_data.to_csv("trial_data.csv", index=False, mode = "a", header = True)
         # create gif
 
         # line_graph_gif = cg.LineGraphGif(x = track.trial_data["trial_number"], y = track.trial_data["pumps"], duration = 300, gif_name = "line_graph.gif",
