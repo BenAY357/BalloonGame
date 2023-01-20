@@ -3,7 +3,7 @@ import experiment_config as exp_cfg
 import create_graph as cg
 import page_control as pg_ctrl
 import balloon_info as bi
-import bob_animation as bob
+import animation.bob_animation as bob
 from config import *
 import balloon_game_buttons as bgb
 

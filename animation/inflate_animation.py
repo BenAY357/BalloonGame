@@ -1,6 +1,6 @@
 from config import *
 import sounds
-import bob_animation as bob
+import animation.bob_animation as bob
 import experiment_config as exp_cfg
 
 class InflateAnimation:

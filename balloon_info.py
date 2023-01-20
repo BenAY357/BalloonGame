@@ -15,10 +15,9 @@ class BalloonInfo: # store the current balloon and the pump it pops at.
             self.pop_at = random.randint(self.pop_range[0], self.pop_range[1]) 
         else: # Set pop to the only number in list. This allows greater flexibility for the experimenter. 
             self.pop_at = self.pop_range[0]
-
     def set_balloon_pixmap(self): # set the balloons' colour
-        window.balloon.setPixmap(QPixmap(self.colour)) # change the balloon's colour
-        window.balloon_icon.setPixmap(QPixmap(self.colour)) # change the balloon icon in the top right's colour to match the current balloon
+        window.balloon.setPixmap(QPixmap(f"Balloons/{self.colour}")) # change the balloon's colour
+        window.balloon_icon.setPixmap(QPixmap(f"Balloons/{self.colour}")) # change the balloon icon in the top right's colour to match the current balloon
 
 
 

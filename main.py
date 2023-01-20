@@ -2,7 +2,6 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-from clickable_label import *
 import demographics as demog
 from config import * # objects to be shared across multiple files
 import page_control as pg_ctrl # next and back page functions. 

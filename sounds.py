@@ -1,13 +1,13 @@
 from PyQt5.QtMultimedia import *
 from PyQt5.QtCore import *
 from PyQt5.QtMultimedia import *
+import experiment_config as exp_cfg
 
 # Create a QMediaPlayer object for the sounds. I've found that mp3 files are easier to play and pause than wav files. 
 pop_sound = QMediaPlayer()
-pop_sound.setMedia(QMediaContent(QUrl.fromLocalFile('pop.mp3')))
+pop_sound.setMedia(QMediaContent(QUrl.fromLocalFile(f"Sounds/{exp_cfg.pop_sound}")))
 
 inflate_sound = QMediaPlayer()
-inflate_sound.setMedia(QMediaContent(QUrl.fromLocalFile('inflate sound.mp3')))
+inflate_sound.setMedia(QMediaContent(QUrl.fromLocalFile(f"Sounds/{exp_cfg.inflate_sound}")))
 
-
-bank_sound = "ka-ching.wav"
+bank_sound = f"Sounds/{exp_cfg.bank_sound}"
