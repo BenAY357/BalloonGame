@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 import shutil
-import experiment_config as exp_cfg
+from config import *
 import matplotlib.ticker as ticker
 
 def main(): # for testing the file when run directly
@@ -39,7 +39,7 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
             ax = plt.figure().gca()
             ax.yaxis.set_major_locator(ticker.MaxNLocator(integer=True))
             ax.xaxis.set_major_locator(ticker.MaxNLocator(integer=True))
-            plt.bar(self.x[:i],self.y[:i])
+            plt.plot(self.x[:i],self.y[:i])
             # Add labels
             plt.title(self.title)
             plt.ylabel(self.y_label)
@@ -73,6 +73,16 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
     def create_gif(self): # run the two above methods one after the other to create the gif. 
         self.create_png()
         self.pngs_to_gif()
+
+def show_graph():
+    rect = window.graph_label.geometry()
+    size = QSize(rect.width(), rect.height())
+    movie = QMovie("total.gif")
+    window.graph_label.setMovie(movie)
+    movie = window.graph_label.movie()
+    movie.setScaledSize(size)
+    movie.start()
+    window.show_data.hide()
 
 if __name__ == "__main__": 
     main()

@@ -17,6 +17,15 @@ admin_password = "admin123" # entering password as the participants ID allows tr
 
 orig_geom = window.balloon.geometry()
 pinfo = {}
-def enable_inflate_and_bank(enable_bool): # enable/disable inflate and bank buttons. True = buttons enabled. False = buttons disabled.
-    window.inflate.setEnabled(enable_bool) 
-    window.bank.setEnabled(enable_bool) 
+
+def enable_inflate_and_bank(enable): # enable/disable inflate and bank buttons. True = buttons enabled. False = buttons disabled.
+    window.inflate.setEnabled(enable) 
+    window.bank.setEnabled(enable) 
+    
+def show_inflate_and_bank(show):
+    if show:
+        window.inflate.show()
+        window.bank.show()
+    else:
+        window.inflate.hide()
+        window.bank.hide()

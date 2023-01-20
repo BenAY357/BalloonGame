@@ -13,6 +13,7 @@ import balloon_info as bi
 import balloon_game_buttons as bg_buttons
 from instructions import *
 import experiment_config as exp_cfg
+import create_graph as cg
 
 # from instructions import *
 
@@ -46,14 +47,11 @@ window.next_consent.clicked.connect(on_consent_submit)
 
 ## Demographics screen
 
-
-
 demographics = demog.Demographics()
 
 window.other.clicked.connect(demographics.show_gender)
 window.female.clicked.connect(demographics.hide_gender)
 window.male.clicked.connect(demographics.hide_gender)
-
 window.next_demographics.clicked.connect(demographics.on_demog_submit)
 
 # Instructions
@@ -87,14 +85,16 @@ bank_instructions = [window.bank_explanation, window.bank_explanation_2,window.c
 
 pop_instructions = [window.beware,window.explain_popping]
 
-instructions = Instructions(display_instructions,
+instructions = Instructions(
+exp_cfg.seconds_between_instructions,
+display_instructions,
 inflation_instructions,
 bank_instructions,
 pop_instructions,
-seconds_between_instructions=.5,
-seconds_between_inflations=1,
-n_demo_inflations=1,
-demo_pop_at=2)
+exp_cfg.n_demo_inflations,
+exp_cfg.demo_pop_at,
+exp_cfg.seconds_between_inflations,
+)
 
 instructions.display_instruction_buttons(False) # start with start game and replay instruction buttons hidden
 
@@ -109,8 +109,6 @@ window.start_game.clicked.connect(instructions.on_start_game)
 ## Balloon Game
 
 # initialise balloon colour
-
-bi.new_balloon_pixmap(bi.balloon_info.colour)
 
 trial_data.update_display(init_display= True) # start everything at zero except for trial number
 
@@ -136,20 +134,10 @@ window.on_likert_submit.clicked.connect(game_feedback.on_radio_questions_submit)
 
 ## diplay data
 
-def show_graph():
-    # graph_pixmap = QPixmap("total.gif")
-    # graph_pixmap.geometry()
-    rect = window.graph_label.geometry()
-    size = QSize(rect.width(), rect.height())
-    movie = QMovie("total.gif")
-    window.graph_label.setMovie(movie)
-    movie = window.graph_label.movie()
-    movie.setScaledSize(size)
-    movie.start()
-    window.show_data.hide()
 
 
-window.show_data.clicked.connect(show_graph)
+
+window.show_data.clicked.connect(cg.show_graph)
 
 ## load window. 
 window.show() 

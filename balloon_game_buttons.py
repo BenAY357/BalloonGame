@@ -33,3 +33,5 @@ def on_bank():
     QSound.play(sound.bank_sound) # play bank sound
     float_up.float_up_animation.float_timer.start(float_up.float_up_animation.timer) # start floating up animation
     bob.bob_animation.bob_timer.stop() # stop bobbing
+
+

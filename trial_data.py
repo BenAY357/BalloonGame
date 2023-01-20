@@ -51,7 +51,7 @@ class TrialData():
         self.data_dict["total_earned"].append(self.total_earned.value)
     def dict_to_df(self):
         self.df = pd.DataFrame(self.data_dict)
-    def df_to_csv(self):
+    def dict_to_csv(self):
         self.dict_to_df()
         if os.path.exists(self.csv_name): # only export header for the first participant
             self.df.to_csv(self.csv_name, index=False, mode = "a", header = False)
