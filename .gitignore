@@ -1,8 +1,12 @@
 stuff/
+tests/
 notes/
+Stimuli stash/
 __pycache__/
 data.csv
-tests/
 ui_GBA.py
-Stimuli stash/
+total.gif
+Data/
+sounds/
+tracking/
 total.gif
