@@ -4,24 +4,25 @@ from config import *
 ############################################### Balloon Paramters #####################################################################
 
 ## Balloon parameters
-# keys are the balloon pngs. Value(s) are the pop range. If there is only one value.
+# keys are the balloon pngs. Value(s) are the pop range. .
 # E.g. [5] = the balloon will always pop at 5. [4:9] = the balloon will pop between pumps 4 and 9. 
+
 balloon_dict = {"pink_balloon.png":[5], "blue_balloon.png":[4,9], "green_balloon.png":[4,8]} 
 
-n_trials = 4 # number of trials
 
-money_per_pump = 0.05 # money per pump
+n_trials = [7,8,9] # number of trials. E.g. [4,5,6] means that participant will be counterbalanced betweeen having 4,5 and 6 trials. 
 
+money_per_pump = [0.05,0.10,0.50] # money (£) per pump. Same principle as n_trials above. 
+
+# N.B. delete the "condition tracker.json" before changing the conditions.
 
 ############################################### Instruction Parameters #####################################################################
 
-seconds_between_instructions = .5
+seconds_between_instructions = 1 # how long each of the instruction labels will show up for. 
 
-seconds_between_inflations = 1 
+n_demo_inflations = 3 # number of times the participant will inflate the balloon in the inflate demonstration
 
-n_demo_inflations = 2 # number of times the balloon will inflate in the inflate demonstration
-
-demo_pop_at = 3 # pump the balloon will pump at in the demo
+demo_pop_at = 5 # pump the balloon will pump at in the demo
 
 ############################################### Animation Paramters #####################################################################
 
@@ -54,10 +55,18 @@ float_up_timer_speed = 50
 ############################################### Sounds #####################################################################
 
 pop_sound = "pop.mp3"
+inflate_sound = "inflate sound.mp3"
+bank_sound = "ka-ching.wav"
+
+############################################### File Mangement #####################################################################
+
+export_data_folder = "Data" # folder the data will be exported to. 
+
+trial_data_file_name = "trial_data.csv"
+
+participant_data_file_name = "participant_data.csv"
+
 
 ############################################### Misc #####################################################################
 
-pop_pic = "pop.png" # picture of popped balloon
-
-
-
+pop_pic = "pop.png"

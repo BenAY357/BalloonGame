@@ -84,33 +84,6 @@
        </font>
       </property>
      </widget>
-     <widget class="QPushButton" name="next_PID">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>510</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="consent_page">
      <widget class="QWidget" name="consent_grp" native="true">
@@ -194,33 +167,6 @@ border-radius: 4px</string>
         <string>I am over 18 years of age.</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="next_consent">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>470</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
      </widget>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
@@ -499,33 +445,6 @@ border-radius: 4px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="next_demographics">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>470</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="age_error" native="true">
       <property name="geometry">
        <rect>
@@ -768,33 +687,6 @@ border-radius: 4px</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Instructions&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="next_instructions">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>430</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="instructions">
       <property name="geometry">
        <rect>
@@ -810,7 +702,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Imagine you are a candidate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Insert Instructions Here&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -884,7 +776,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>Total Earned:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Total Earned:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="balloon">
@@ -927,7 +819,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>Current Earned:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Current Earned:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="current_pumps">
@@ -945,7 +837,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>Current Pumps:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Current Pumps:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="trial_number">
@@ -963,7 +855,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>Balloon:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Balloon:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="balloon_icon">
@@ -1006,11 +898,11 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 3, 36);
-border: 1px solid blue;</string>
+       <string notr="true">
+color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>All the money in your bank</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;All the money in your bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="current_earned_explanation">
@@ -1018,7 +910,7 @@ border: 1px solid blue;</string>
        <rect>
         <x>200</x>
         <y>50</y>
-        <width>261</width>
+        <width>491</width>
         <height>61</height>
        </rect>
       </property>
@@ -1028,11 +920,10 @@ border: 1px solid blue;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 3, 36);
-border: 1px solid blue;</string>
+       <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>How much money you will earn if you bank the balloon</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;How much money you will earn if you bank the balloon&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="current_pumps_explanation">
@@ -1053,7 +944,7 @@ border: 1px solid blue;</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>Number of times you've inflated the current balloon</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Number of times you've inflated the current balloon&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="click_inflate_img">
@@ -1097,8 +988,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="current_balloon_explanation">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>-10</y>
+        <x>470</x>
+        <y>0</y>
         <width>201</width>
         <height>61</height>
        </rect>
@@ -1112,13 +1003,13 @@ border: 1px solid blue;</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>Current balloon number</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Current balloon number&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="inflate_explanation">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>80</x>
         <y>460</y>
         <width>231</width>
         <height>61</height>
@@ -1133,15 +1024,15 @@ border: 1px solid blue;</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>Click inflate to pump the balloon</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Click inflate to pump&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;the balloon&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="bank_explanation">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>410</x>
         <y>460</y>
-        <width>231</width>
+        <width>341</width>
         <height>51</height>
        </rect>
       </property>
@@ -1154,8 +1045,7 @@ border: 1px solid blue;</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>Click bank to add what you have currently
- earned to your total.</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Click bank to add what you have &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;currently earned to your total.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="play_instructions">
@@ -1185,7 +1075,7 @@ border-radius: 4px</string>
        <string>Replay Instructions</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="start_game">
+     <widget class="QPushButton" name="start">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -1217,7 +1107,7 @@ border-radius: 4px</string>
        <rect>
         <x>130</x>
         <y>230</y>
-        <width>501</width>
+        <width>391</width>
         <height>61</height>
        </rect>
       </property>
@@ -1230,7 +1120,7 @@ border-radius: 4px</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>Beware....</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Beware....&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="explain_popping">
@@ -1238,7 +1128,7 @@ border-radius: 4px</string>
        <rect>
         <x>130</x>
         <y>230</y>
-        <width>331</width>
+        <width>601</width>
         <height>61</height>
        </rect>
       </property>
@@ -1248,19 +1138,18 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 3, 36);
-border: 1px solid blue;</string>
+       <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>If you pump the balloon too much it will burst and you will lose your unbanked money.</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;If you pump the balloon too much it will burst &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;and you will lose your unbanked money.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="bank_explanation_2">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>410</x>
         <y>460</y>
-        <width>231</width>
+        <width>291</width>
         <height>51</height>
        </rect>
       </property>
@@ -1273,7 +1162,20 @@ border: 1px solid blue;</string>
        <string notr="true">color: rgb(255, 3, 36)</string>
       </property>
       <property name="text">
-       <string>This will move you onto the next balloon</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;This will move you onto &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;the next balloon&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="saving_data">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>140</y>
+        <width>281</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Saving data...</string>
       </property>
      </widget>
      <zorder>inflate</zorder>
@@ -1291,18 +1193,19 @@ border: 1px solid blue;</string>
      <zorder>inflate_explanation</zorder>
      <zorder>bank_explanation</zorder>
      <zorder>play_instructions</zorder>
-     <zorder>start_game</zorder>
+     <zorder>start</zorder>
      <zorder>beware</zorder>
      <zorder>explain_popping</zorder>
      <zorder>bank_explanation_2</zorder>
      <zorder>click_inflate_img</zorder>
      <zorder>click_bank_img</zorder>
+     <zorder>saving_data</zorder>
     </widget>
     <widget class="QWidget" name="feedback">
      <widget class="QLabel" name="question_set_up">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>10</y>
         <width>601</width>
         <height>121</height>
@@ -1320,8 +1223,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>100</y>
+        <x>260</x>
+        <y>80</y>
         <width>61</width>
         <height>51</height>
        </rect>
@@ -1338,8 +1241,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>100</y>
+        <x>330</x>
+        <y>80</y>
         <width>61</width>
         <height>51</height>
        </rect>
@@ -1356,8 +1259,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>120</y>
+        <x>400</x>
+        <y>100</y>
         <width>61</width>
         <height>16</height>
        </rect>
@@ -1374,8 +1277,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>120</y>
+        <x>470</x>
+        <y>100</y>
         <width>61</width>
         <height>16</height>
        </rect>
@@ -1392,8 +1295,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>100</y>
+        <x>540</x>
+        <y>80</y>
         <width>41</width>
         <height>51</height>
        </rect>
@@ -1410,8 +1313,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="accurate_measure_question">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>210</y>
+        <x>30</x>
+        <y>190</y>
         <width>201</width>
         <height>51</height>
        </rect>
@@ -1429,8 +1332,8 @@ border: 1px solid blue;</string>
      <widget class="QGroupBox" name="fun_grp">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>150</y>
+        <x>240</x>
+        <y>130</y>
         <width>391</width>
         <height>51</height>
        </rect>
@@ -1507,8 +1410,8 @@ border: 1px solid blue;</string>
      <widget class="QGroupBox" name="accurate_measure_grp">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>210</y>
+        <x>240</x>
+        <y>190</y>
         <width>391</width>
         <height>51</height>
        </rect>
@@ -1585,8 +1488,8 @@ border: 1px solid blue;</string>
      <widget class="QLabel" name="fun_question">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>150</y>
+        <x>30</x>
+        <y>130</y>
         <width>181</width>
         <height>51</height>
        </rect>
@@ -1604,7 +1507,7 @@ border: 1px solid blue;</string>
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>270</y>
+        <y>250</y>
         <width>551</width>
         <height>271</height>
        </rect>
@@ -1616,38 +1519,11 @@ border: 1px solid blue;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="show_data">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>390</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Data</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="fun_error" native="true">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>140</y>
+        <x>20</x>
+        <y>120</y>
         <width>131</width>
         <height>31</height>
        </rect>
@@ -1714,8 +1590,8 @@ border-radius: 4px</string>
      <widget class="QWidget" name="accurate_measure_error" native="true">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>200</y>
+        <x>20</x>
+        <y>180</y>
         <width>131</width>
         <height>31</height>
        </rect>
@@ -1779,80 +1655,6 @@ border-radius: 4px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="on_likert_submit">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>510</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="Results">
-     <widget class="QPushButton" name="next_results">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>490</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="instructions_header_2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>661</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Debrief&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Thank you for your participation. We were investigating whether gamified behavioual assessments can be used as a valid psychometric tests&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="Debrief">
      <widget class="QLabel" name="debrief">
@@ -1870,67 +1672,7 @@ border-radius: 4px</string>
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Debrief&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Thank you for participating in this study. We were interested in whether the total of numbers of marbles in&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; each urn would affect people's propensity to pick the urn with the unknown number of blue marbles. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="email_instructions">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>190</y>
-        <width>491</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Please leave your e-mail below if you would like to be entered into the £30 raffle</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="email">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>361</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="next_debrief">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>470</y>
-        <width>61</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(230, 18, 52);
-border-color: rgb(206, 16, 47);
-color: rgb(255, 255, 255);
-border-radius: 4px</string>
-      </property>
-      <property name="text">
-       <string>Next</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Debrief&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Thank you for participating in this study. We were investigating whether gamefied &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;behavioural assessments can be used as a valid psychometric tool. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -1997,7 +1739,7 @@ border-radius: 4px</string>
    <widget class="QPushButton" name="print">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>320</x>
       <y>600</y>
       <width>121</width>
       <height>31</height>
@@ -2010,6 +1752,33 @@ border-radius: 4px</string>
     </property>
     <property name="text">
      <string>print data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="next">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>530</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(230, 18, 52);
+border-color: rgb(206, 16, 47);
+color: rgb(255, 255, 255);
+border-radius: 4px</string>
+    </property>
+    <property name="text">
+     <string>Next</string>
     </property>
    </widget>
   </widget>

@@ -1,6 +1,6 @@
 from config import *
 import experiment_config as exp_cfg
-from reset import *
+from reset import reset_trial
 
 
 class FloatUpAnimation(): # Parameters for the FloatUpAnimation

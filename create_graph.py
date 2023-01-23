@@ -28,7 +28,12 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
         self.y_label = y_label
         self.x_ax_int = x_ax_int # True- force x axis to only use integers. Can't have decimal places for the balloon number. 
         self.y_ax_int = y_ax_int # True- force y axis to only use integers. Can't have decimal places for the number of pumps. 
-    def create_png(self): # create pngs
+
+    def create_gif(self): # run the two above methods one after the other to create the gif. 
+        self.create_pngs()
+        self.pngs_to_gif()
+
+    def create_pngs(self): # create pngs
         if os.path.exists(f"{self.gif_name}.gif"):
             os.path.remove(f"{self.gif_name}.gif") # delete the previous participant's gif
         if not os.path.exists(f"{self.folder_name}/"):
@@ -70,19 +75,17 @@ class LineGraphGif(): # Generates a png of the graph at each stage and then crea
        # delete PNGs after the gif has been created
         shutil.rmtree(f"{self.folder_name}/")
 
-    def create_gif(self): # run the two above methods one after the other to create the gif. 
-        self.create_png()
-        self.pngs_to_gif()
 
-def show_graph():
-    rect = window.graph_label.geometry()
-    size = QSize(rect.width(), rect.height())
-    movie = QMovie("total.gif")
-    window.graph_label.setMovie(movie)
-    movie = window.graph_label.movie()
-    movie.setScaledSize(size)
-    movie.start()
-    window.show_data.hide()
+
+    def show_graph(self):
+        rect = window.graph_label.geometry()
+        size = QSize(rect.width(), rect.height())
+        movie = QMovie(f"{self.gif_name}")
+        window.graph_label.setMovie(movie)
+        movie = window.graph_label.movie()
+        movie.setScaledSize(size)
+        movie.start()
+
 
 if __name__ == "__main__": 
     main()

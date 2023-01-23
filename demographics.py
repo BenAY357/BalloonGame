@@ -1,7 +1,7 @@
 from config import *
-import radio_btn_question as rad_class
+import radio_btn_class as rad_class
 import page_control as pg_ctrl
-
+import pop_up
 # Set education and gender questions as radio button classes
 education = rad_class.RadioButtonQuestion(export_name = "education",
                                         btns=window.education_grp.children(), # group box the buttons belong to
@@ -18,7 +18,6 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
 
         window.age_error.hide() # start with age error hidden
         self.hide_gender() # hide specify gender line edit to begin with
-
 
     def show_gender(self): # show specify gender line edit
         window.specify_gender.show() 
@@ -38,8 +37,26 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
         self.get_demogs() # get responses
         if self.is_complete() and self.data["age"] >= 18: # move to next page if the responses are filled in and age is over 18
             pg_ctrl.next_page()
-            print(self.data)
         else: # show error messages there any responses are missing
             self.show_radio_errors() # show errors for the appropriate radio questions
             window.age_error.show() if self.data["age"] < 18 else window.age_error.hide() # show error message if age < 18. 
+    ################# PID and consent submit ###################
+    def on_PID_submit(self):
+        if window.PID.text() == "": # check if PID is blank
+            pop_up.pop_up_warning("Input your participant ID to continue")
+        else:
+            self.data["PID"] = window.PID.text() # store PID in data
+            pg_ctrl.next_page() # go to next page
+            
+    def on_consent_submit(self): # check if all consent boxes are ticked.
+        for consent in window.consent_grp.children():
+            if consent.isChecked() == False: # Display error message if there is an unticked box
+                return pop_up.pop_up_warning("You must consent to all of the items continue.")
+        pg_ctrl.next_page() # move to next screen if every box is ticked. 
+
+
+
+
+demog = Demographics()
+
 
