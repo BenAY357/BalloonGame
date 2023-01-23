@@ -2,7 +2,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtMultimedia import *
-import instructions
+import instructions as instructions
 from config import * # objects to be shared across multiple files
 import page_control as pg_ctrl # next and back page functions. 
 from trial_data import *
@@ -38,8 +38,6 @@ window.play_instructions.clicked.connect(instructions.demo.play)
 # bgb.enable_inflate_and_bank(False) # disable inflating and banking during the instructions
 bgb.show_inflate_and_bank(False) # Hide balloon game buttons initially. 
 window.start.hide()
-
-
 
 window.start.clicked.connect(instructions.demo.on_start_game)
 

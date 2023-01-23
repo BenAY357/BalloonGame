@@ -1,7 +1,7 @@
 from config import *
 import radio_btn_class as rad_class
 import page_control as pg_ctrl
-import pop_up
+
 # Set education and gender questions as radio button classes
 education = rad_class.RadioButtonQuestion(export_name = "education",
                                         btns=window.education_grp.children(), # group box the buttons belong to
@@ -48,7 +48,7 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
     def on_PID_submit(self):
         """Check that the participant have inputed their ID. If they have store it. If they haven't, show pop up warning"""
         if window.PID.text() == "": # check if PID is blank
-            pop_up.pop_up_warning("Input your participant ID to continue")
+            self.pop_up_warning("Input your participant ID to continue")
         else:
             self.data["PID"] = window.PID.text() # store PID in data
             pg_ctrl.next_page() # go to next page
@@ -57,9 +57,16 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
         """"Check if all consent boxes are ticked"""
         for consent in window.consent_grp.children():
             if consent.isChecked() == False: # Display error message if there is an unticked box
-                return pop_up.pop_up_warning("You must consent to all of the items continue.")
+                return self.pop_up_warning("You must consent to all of the items continue.")
         pg_ctrl.next_page() # move to next screen if every box is ticked. 
 
+    def pop_up_warning(self, warning): 
+        """Pop up warning which displays the string assigned to warning"""
+        pop_up = QMessageBox()
+        pop_up.setWindowTitle("Warning")
+        pop_up.setText(warning)
+        pop_up.setIcon(QMessageBox.Critical)
+        pop_up.exec_()
 
 
 

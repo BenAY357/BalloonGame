@@ -1,8 +1,8 @@
 from config import *
 import balloon_game_buttons as bgb
-import balloon_info as bi
+import balloon_game.balloon_info as bi
 from trial_data import *
-import experiment_config as exp_cfg
+import config_files.experiment_config as exp_cfg
 from display_labels import *
 import worker_threads as worker
 from condition import condition
@@ -13,7 +13,7 @@ Imagine that your are applying for PwC (a consulting company).
 
 PwC are hosting a conference and want to pay you to inflate {condition.n_trials} balloons.
 
-You will earn more money for bigger balloons. Each time you inflate the ballon you will earn £{condition.money_per_pump}.
+You will earn more money for bigger balloons. Each time you inflate the ballon you will earn £{condition.money_per_pump:.2f}.
 
 However, if you burst the balloon you will earn nothing. Try to earn as much money as you can. 
 

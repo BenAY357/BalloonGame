@@ -19,8 +19,6 @@ def create_folder(folder):
 
 def export_data_to_csv():
     """Export trial and participant data to CSVs in a folder called data. """
-    folder = exp_cfg.export_data_folder
-    create_folder(folder)
     # convert trial data to df
     trial_df = pd.DataFrame(trial_data.data_dict)
     trial_df.insert(0, "PID", demog.data["PID"]) # add ID to identify participant
@@ -37,8 +35,8 @@ def export_data_to_csv():
     participant_data_dict = {k:[v] for k,v in participant_data_dict.items()} # place all values in a list to avoid scalar error
     participant_data_df = pd.DataFrame(participant_data_dict) # convert demographics and feedback to df. 
     
-    
-    
+    folder = exp_cfg.export_data_folder
+    create_folder(folder)
     
     df_to_csv(participant_data_df, f"{folder}/{exp_cfg.participant_data_file_name}")
 

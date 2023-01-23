@@ -1,10 +1,9 @@
-
-import experiment_config as exp_cfg
+import config_files.experiment_config as exp_cfg
 import animation.bob_animation as bob
 import animation.inflate_animation as inflate
 from config import *
 import sounds as sound
-import balloon_info as bi
+import balloon_game.balloon_info as bi
 from PyQt5.QtMultimedia import *
 import animation.float_up_animation as float_up
 from trial_data import *

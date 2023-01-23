@@ -1,6 +1,6 @@
 from config import *
-import config_files.experiment_config as exp_cfg
-from balloon_game.reset import reset_trial
+import experiment_config as exp_cfg
+from reset import reset_trial
 
 
 class FloatUpAnimation(): # Parameters for the FloatUpAnimation
