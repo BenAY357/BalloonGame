@@ -1,5 +1,5 @@
 import random
-import config_files.experiment_config as exp_cfg
+import experiment_config as exp_cfg
 from config import *
 
 class BalloonInfo: # store the current balloon and the pump it pops at. 

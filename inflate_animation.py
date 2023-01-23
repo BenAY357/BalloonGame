@@ -1,11 +1,11 @@
 from config import *
-import animation.bob_animation as bob
-import config_files.experiment_config as exp_cfg
+import bob_animation as bob
+import experiment_config as exp_cfg
 import balloon_game_buttons as bgb
 from trial_data import *
 import sounds as sound
-import balloon_game.balloon_info as bi
-from balloon_game.reset import reset_trial
+import balloon_info as bi
+from reset import reset_trial
 class InflateAnimation:
     def __init__(self, max_increase, scale, shift_up, timer, # change inflation animation
                 inflate_sound = sound.inflate_sound, # default sound

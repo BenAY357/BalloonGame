@@ -1,5 +1,5 @@
 from demographics import demog
-import config_files.experiment_config as exp_cfg
+import experiment_config as exp_cfg
 from trial_data import *
 import feedback
 from config import *

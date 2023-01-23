@@ -1,4 +1,4 @@
-import config_files.experiment_config as exp_cfg
+import experiment_config as exp_cfg
 import json
 import random
 import os

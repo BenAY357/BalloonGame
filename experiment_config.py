@@ -18,7 +18,7 @@ money_per_pump = [0.05,0.10,0.50] # money (£) per pump. Same principle as n_tri
 
 ############################################### Instruction Parameters #####################################################################
 
-seconds_between_instructions = 1 # how long each of the instruction labels will show up for. 
+seconds_between_instructions = .3 # how long each of the instruction labels will show up for. 
 
 n_demo_inflations = 3 # number of times the participant will inflate the balloon in the inflate demonstration
 

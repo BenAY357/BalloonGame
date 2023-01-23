@@ -1,8 +1,8 @@
 from config import *
 import balloon_game_buttons as bgb
-import balloon_game.balloon_info as bi
+import balloon_info as bi
 from trial_data import *
-import config_files.experiment_config as exp_cfg
+import experiment_config as exp_cfg
 from display_labels import *
 import worker_threads as worker
 from condition import condition
@@ -162,14 +162,16 @@ class Demonstration():
         Hide all the instruction labels in case there are any. 
         """
         window.play_instructions.setText("Replay Instructions")
-        self.display_instruction_buttons(True) # Show start/ replay instruction buttons
+
+        QTimer.singleShot(3000, lambda display = True: self.display_instruction_buttons(display)) # show start and replay buttons
+                                                    
+
         bgb.show_inflate_and_bank(False) # hide balloon game buttons 
         # Hide blinking cursor
         self.blink_inflate_timer.stop()
         window.click_inflate_img.hide()
         for label in self.all_instructions: # hide all instruction labels after done
             label.hide()
-        # bgb.enable_inflate_and_bank(False) # resetting the ballon re-enables inflating and banking
     
 
     def reset_tracking(self):

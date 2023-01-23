@@ -1,6 +1,6 @@
 from config import *
 import math
-import config_files.experiment_config as exp_cfg
+import experiment_config as exp_cfg
 
 class BobAnimation(): # Parameters for the bob animation
     def __init__(self,amplitude,T, timer = 150, # bob parameters

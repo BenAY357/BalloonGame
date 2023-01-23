@@ -76,7 +76,7 @@ def on_next():
     # index 4 is the balloon game
 
     elif pages.currentIndex() == 5: # Feedback
-        window.next.move(340,530) # move next button back to centre. 
+        # window.next.move(340,530) # move next button back to centre. 
         feedback.game_feedback.on_radio_questions_submit()
         export.export_data_to_csv() # export data
         

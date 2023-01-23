@@ -1,5 +1,5 @@
 from config import *
-import balloon_game.balloon_info as bi
+import balloon_info as bi
 from condition import condition
 # For keeping track of the data and updating the displays 
 
