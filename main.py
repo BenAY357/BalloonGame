@@ -17,7 +17,7 @@ import feedback
 
 window.setWindowTitle("Balloon Game")
 window.pages.setCurrentIndex(0) # start on first page. 
-window.setWindowIcon(QIcon("balloons/pink_balloon.png"))
+window.setWindowIcon(QIcon("balloons/blue_balloon.png"))
 # set width and height of window
 
 window.setFixedWidth(752)
