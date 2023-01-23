@@ -1170,8 +1170,8 @@ border-radius: 4px</string>
        <rect>
         <x>230</x>
         <y>140</y>
-        <width>281</width>
-        <height>41</height>
+        <width>301</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="text">
