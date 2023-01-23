@@ -17,7 +17,7 @@ import feedback
 
 window.setWindowTitle("Balloon Game")
 window.pages.setCurrentIndex(0) # start on first page. 
-
+window.setWindowIcon(QIcon("balloons/pink_balloon.png"))
 # set width and height of window
 
 window.setFixedWidth(752)
@@ -34,13 +34,15 @@ window.male.clicked.connect(demog.hide_gender)
 
 window.play_instructions.setText("Play Tutorial")
 window.play_instructions.clicked.connect(instructions.demo.play)
-bgb.enable_inflate_and_bank(False) # disable inflating and banking during the instructions
 
+# bgb.enable_inflate_and_bank(False) # disable inflating and banking during the instructions
+bgb.show_inflate_and_bank(False) # Hide balloon game buttons initially. 
 window.start.hide()
 
-bgb.show_inflate_and_bank(False) # Hide balloon game buttons initially. 
+
 
 window.start.clicked.connect(instructions.demo.on_start_game)
+
 ## Balloon Game
 
 trial_data.update_display(init_display= True) # start everything at zero except for trial number
