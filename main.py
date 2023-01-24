@@ -60,30 +60,32 @@ window.inflate.clicked.connect(bgb.on_inflate)
 def on_next():
     if pages.currentIndex() == 0: # Participant ID
         demog.on_PID_submit()
-        pg_ctrl.next_page()
+        pg_ctrl.next_page() # skip consent page. For testing purposes. 
 
     elif pages.currentIndex() == 1: # Consent
-        demog.on_consent_submit()
+        demog.on_consent_submit() # move to next page if consent is given. 
 
     elif pages.currentIndex() == 2: # Demographics
-        demog.on_demog_submit()
+        demog.on_demog_submit() # move to next page if all the reponses are filled. 
 
     elif pages.currentIndex() == 3: # Instructions
         demo.init_workers() # init workers so the instruction labels start hidden    
         window.next.hide() # hide next button
         window.next.move(650, 530) # move button to bottom right to make room for the graph on the feedback page
         pg_ctrl.next_page() 
-    # index 4 is the balloon game
+
+    # page index 4 is the balloon game
 
     elif pages.currentIndex() == 5: # Feedback
-        # window.next.move(340,530) # move next button back to centre. 
-        feedback.game_feedback.on_radio_questions_submit()
+        feedback.game_feedback.on_radio_questions_submit() # move to next page if all the reponses are filled. 
         export.export_data_to_csv() # export data
+        if feedback.game_feedback.is_complete(): # if all responses are filled 
+            window.next.move(340,530) # move window button back to centre. 
+    elif pages.currentIndex() == 6: # Debrief screen
+        pg_ctrl.next_page()
+    
+  
         
-    elif pages.currentIndex() == 6: # Debrief
-        pg_ctrl.next_page() # hide button
-        window.next.hide()
-
 window.next.clicked.connect(on_next)
 
 ## load window. 

@@ -25,7 +25,6 @@ class TrialData():
         self.data_dict = self.init_empty_list_dict(keys = ["trial_number", "balloon", "pop_at", "pumps", 
                                                 "total_pumps", "total_earned", "popped"]) # set column names as the keys
         self.csv_name = csv_name
-        
 
     def update_display(self, init_display = False): # choose whether to initialise display
         window.current_earned.setText(f"Current Earned: £{0 if init_display else self.current_earned.value:.2f}")

@@ -35,7 +35,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="PID_page">
      <widget class="QLabel" name="label_2">
@@ -1660,7 +1660,7 @@ border-radius: 4px</string>
      <widget class="QLabel" name="debrief">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>-10</y>
         <width>661</width>
         <height>221</height>
@@ -1676,12 +1676,12 @@ border-radius: 4px</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="Exitpage">
+    <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>160</y>
+        <x>70</x>
+        <y>80</y>
         <width>551</width>
         <height>181</height>
        </rect>

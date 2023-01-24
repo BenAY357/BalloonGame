@@ -21,7 +21,6 @@ Click next to go to the turtorial
 """
 )
 
-
 class Demonstration():
     def __init__(self, 
                     seconds_between_instructions,
@@ -164,7 +163,7 @@ class Demonstration():
         window.play_instructions.setText("Replay Instructions")
 
         QTimer.singleShot(3000, lambda display = True: self.display_instruction_buttons(display)) # show start and replay buttons
-                                                    
+
 
         bgb.show_inflate_and_bank(False) # hide balloon game buttons 
         # Hide blinking cursor
@@ -208,10 +207,6 @@ class Demonstration():
         self.display_instruction_buttons(False)
     
         trial_data.data_dict = {key: [] for key in trial_data.data_dict} # prevent demonstration data from being exported with the trial data
-
-
-
-
 
 # Initialise demonstration
 

@@ -10,7 +10,7 @@ from config import *
 balloon_dict = {"pink_balloon.png":[5], "blue_balloon.png":[4,9], "green_balloon.png":[4,8]} 
 
 
-n_trials = [7,8,9] # number of trials. E.g. [4,5,6] means that participant will be counterbalanced betweeen having 4,5 and 6 trials. 
+n_trials = [5,6,7] # number of trials. E.g. [4,5,6] means that participant wills be counterbalanced betweeen having 4,5 and 6 trials. 
 
 money_per_pump = [0.05,0.10,0.50] # money (£) per pump. Same principle as n_trials above. 
 

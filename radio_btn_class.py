@@ -42,8 +42,6 @@ class MultipleRadioButtonQuestions(): # Gets responses and shows error messages 
         else: # show error messages if any responses are missing
             self.show_radio_errors()
 
-
-
     def get_radio_responses(self):
         """Get the responses from all the radio button questions """
         for question in self.radio_questions: # for every question in the list
