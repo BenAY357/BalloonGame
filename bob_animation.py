@@ -28,4 +28,6 @@ class BobAnimation(): # Parameters for the bob animation
         self.t += 0.1 # increment time
         self.balloon.setGeometry(self.balloon.x(), int(new_y), self.balloon.width(), self.balloon.height())# set new geometry. Only change y. 
 
-bob_animation = BobAnimation(amplitude = exp_cfg.bob_amplitude, T = exp_cfg.bob_time_period, timer = exp_cfg.bob_timer_speed) 
+bob_animation = BobAnimation(amplitude = exp_cfg.bob_amplitude, 
+                            T = exp_cfg.bob_time_period, 
+                            timer = exp_cfg.bob_timer_speed) 

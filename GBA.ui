@@ -1700,60 +1700,6 @@ border-radius: 4px</string>
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="global_previous">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>600</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Previous</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="global_next">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>600</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Next</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="print">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>600</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>print data</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="next">
     <property name="geometry">
      <rect>

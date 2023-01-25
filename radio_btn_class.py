@@ -22,7 +22,7 @@ class RadioButtonQuestion(): # Class of radio button question. Radio buttons mus
 
     def check_error(self):
         """
-        Show error label if there is not response. Hide error label if there is one. 
+        Show error label if there is no response. Hide error label if there is one. 
         """ 
         self.error_label.show() if self.response == None else self.error_label.hide()
 
@@ -61,7 +61,3 @@ class MultipleRadioButtonQuestions(): # Gets responses and shows error messages 
             if value == None:
                 return False # return false if a value is missing
         return True # return true if nothing is missing
-
-
-
-

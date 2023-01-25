@@ -19,9 +19,6 @@ class BalloonInfo: # store the current balloon and the pump it pops at.
         window.balloon.setPixmap(QPixmap(f"balloons/{self.colour}")) # change the balloon's colour
         window.balloon_icon.setPixmap(QPixmap(f"balloons/{self.colour}")) # change the balloon icon in the top right's colour to match the current balloon
 
-
-
-
 # initialise balloon
 balloon_info = BalloonInfo(balloon_dict=exp_cfg.balloon_dict) # stores the balloon's colour and the pump it pops at
 balloon_info.pick_balloon() # pick balloon at the start

@@ -1,13 +1,7 @@
-stuff/
-tests/
-notes/
-Stimuli stash/
 __pycache__/
-data.csv
 ui_GBA.py
 total.gif
 Data/
 sounds/
-tracking/
 total.gif
 condition tracker.json

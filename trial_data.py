@@ -27,6 +27,7 @@ class TrialData():
         self.csv_name = csv_name
 
     def update_display(self, init_display = False): # choose whether to initialise display
+        """Update the balloon game display."""
         window.current_earned.setText(f"Current Earned: £{0 if init_display else self.current_earned.value:.2f}")
         window.current_pumps.setText(f"Pumps: {0 if init_display else self.current_pumps.value}")
         window.total_earned.setText(f"Total Earned: £{0 if init_display else self.total_earned.value:.2f}")
@@ -34,10 +35,14 @@ class TrialData():
 
     # create dictionary to track the data
     def init_empty_list_dict(self, keys): # create a dictionary with an empty list for each key. For exporting the data to. 
+        """Create a dictionary from a list where the elements in the list are the keys and their values are
+        empty lists"""
+        
         empty_list_dict = {new_list: [] for new_list in keys}
         return empty_list_dict
 
-    def get_data(self): # append data to dict_dict after each trial
+    def get_data(self): 
+        """Store data in a dictionary. """
         self.data_dict["trial_number"].append(self.trial_counter.value)
         self.data_dict["balloon"].append(bi.balloon_info.colour.split('.', 1)[0])# get everything to left of ".". Removes the ".png"
         self.data_dict["pop_at"].append(bi.balloon_info.pop_at)

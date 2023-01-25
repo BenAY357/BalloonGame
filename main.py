@@ -12,7 +12,6 @@ import export_data as export
 from demographics import demog
 import feedback
 
-
 ## Set up
 
 window.setWindowTitle("Balloon Game")
@@ -83,6 +82,7 @@ def on_next():
             window.next.move(340,530) # move window button back to centre. 
     elif pages.currentIndex() == 6: # Debrief screen
         pg_ctrl.next_page()
+        window.next.hide()
     
   
         

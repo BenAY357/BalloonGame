@@ -8,6 +8,7 @@ from config import *
 import balloon_game_buttons as bgb
 from condition import condition
 
+
 window.saving_data.hide() # hide loading label initially. 
 
 def reset_trial(): # reset trial

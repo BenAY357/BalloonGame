@@ -1,28 +1,29 @@
 from config import *
-
-
 ############################################### Balloon Paramters #####################################################################
 
 ## Balloon parameters
-# keys are the balloon pngs. Value(s) are the pop range. .
+# keys are the balloon pngs. Value(s) are the pop range. 
 # E.g. [5] = the balloon will always pop at 5. [4:9] = the balloon will pop between pumps 4 and 9. 
+
+# To add a balloon save its png in the balloons folder and then add its file name and pop range to the dictionary.
+# E.g. {"rainbow_balloon.png": [10:20]} will add the a rainbow balloon with a pop range of 10 to 20 into the experiment.  
 
 balloon_dict = {"pink_balloon.png":[5], "blue_balloon.png":[4,9], "green_balloon.png":[4,8]} 
 
 
 n_trials = [5,6,7] # number of trials. E.g. [4,5,6] means that participant wills be counterbalanced betweeen having 4,5 and 6 trials. 
-
+                    # Hence adding another condition with 8 trials is a single as adding 8 to the list.
 money_per_pump = [0.05,0.10,0.50] # money (£) per pump. Same principle as n_trials above. 
 
 # N.B. delete the "condition tracker.json" before changing the conditions.
 
 ############################################### Instruction Parameters #####################################################################
 
-seconds_between_instructions = .3 # how long each of the instruction labels will show up for. 
+seconds_between_instructions = 3 # how long each of the instruction labels will show up for. 
 
 n_demo_inflations = 3 # number of times the participant will inflate the balloon in the inflate demonstration
 
-demo_pop_at = 5 # pump the balloon will pump at in the demo
+demo_pop_at = 5 # pump the balloon will pop at in the demo
 
 ############################################### Animation Paramters #####################################################################
 
@@ -36,7 +37,6 @@ bob_timer_speed = 150 # how often the bobbing function fires. Increase for slowe
 
 ## Inflate parameters- control how the ballon inflates
 
-max_increase = 10 # stop increasing when scale increases by 10
 """
 Increase the width and height by the scale each time. 
  2 is the lowest scale possible. 
@@ -44,6 +44,9 @@ Increase the width and height by the scale each time.
  If x isn't shifted the balloon will float diagonally up
 """
 scale = 2 
+
+max_increase = 10 # stop increasing when scale increases by 10
+
 shift_up = 5 # how much to shift the balloon up each timer. The balloon needs to rise as it gets bigger. 
 inflation_timer_speed = 150 # time in ms between each increase. 
 

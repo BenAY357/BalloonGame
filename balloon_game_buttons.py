@@ -10,10 +10,16 @@ from trial_data import *
 from condition import condition
 
 def enable_inflate_and_bank(enable): # enable/disable inflate and bank buttons. True = buttons enabled. False = buttons disabled.
+    """Enable/ disable inflate and bank buttons
+    Enable if True. Disable if False. 
+    """
     window.inflate.setEnabled(enable) 
     window.bank.setEnabled(enable) 
     
 def show_inflate_and_bank(show):
+    """Show/ hide inflate and bank buttons. 
+    Show if True. Hide if False
+    """
     if show:
         window.inflate.show()
         window.bank.show()

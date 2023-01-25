@@ -5,7 +5,7 @@ found_fun = rad_class.RadioButtonQuestion(export_name = "found_fun",
                                             btns=window.fun_grp.children(),
                                             error_label= window.fun_error)
 
-accurate_measure = rad_class.RadioButtonQuestion(export_name = "accuate_measure",
+accurate_measure = rad_class.RadioButtonQuestion(export_name = "accurate_measure",
                                             btns=window.accurate_measure_grp.children(),
                                             error_label= window.accurate_measure_error)
 

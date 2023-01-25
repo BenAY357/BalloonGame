@@ -15,7 +15,6 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
         # set questions as attributes
         self.radio_questions = [education, gender]
         self.data = {}
-
         window.age_error.hide() # start with age error hidden
         self.hide_gender() # hide specify gender line edit to begin with
 
@@ -67,8 +66,6 @@ class Demographics(rad_class.MultipleRadioButtonQuestions):
         pop_up.setText(warning)
         pop_up.setIcon(QMessageBox.Critical)
         pop_up.exec_()
-
-
 
 demog = Demographics()
 
