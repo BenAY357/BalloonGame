@@ -3,9 +3,9 @@
 <center><h2> Experimental Overview: </center></h2>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this experiment, we are evaluating the effectiveness of the balloon game as a psychometric tool. The balloon game is one of the most popular tests companies use to measure their candidates' risk-taking behaviour. In each round, participants are presented with one of three types of balloons each with a different pop range. They are told that they will earn 5p every time they pump the balloon. However, if they pump the balloon too much it will pop, and they will lose everything they have earned in the round. At any point in the round, they may bank the balloon. This moves them on to the next balloon and adds their round’s earnings to their total. Candidates with high risk-taking behaviour are more likely to pop the balloons while those with low risk-taking behaviour will bank the balloons early. Hence, extreme candidates at either end will perform poorly.
+In this experiment, we are evaluating the effectiveness of the balloon game as a psychometric tool. The balloon game is one of the most popular tests companies use to measure their candidates' risk-taking behaviour. In each round, participants are presented with one of three types of balloons each with a different pop range. They are told that they will earn 5p every time they pump the balloon. However, if they pump the balloon too much it will pop, and they will lose everything they have earned in the round. At any point in the round, they may bank the balloon. This moves them on to the next balloon and adds their round’s earnings to their total. Candidates with high risk-taking behaviour are more likely to pop the balloons while those with low risk-taking behaviour will bank the balloons early. Hence, extreme candidates at either end will perform poorly.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Despite the balloon game's popularity, little is known about it. Therefore, in this experiment, we will be investigating whether the number of trials and money earned per pump affects how many times the participants pump the balloon. Furthermore, we will be investigating whether participants found the game fun and whether they believe that it accurately measures their risk-taking behaviour.  
+Despite the balloon game's popularity, little is known about it. Therefore, in this experiment, we will be investigating whether the number of trials and money earned per pump affects how many times the participants pump the balloon. Furthermore, we will be investigating whether participants found the game fun and whether they believe that it accurately measures their risk-taking behaviour.  
 
 
 <center><h2>Methods</center></h2>
@@ -13,18 +13,18 @@
 **Design**
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This study has a between-groups design with two independent variables. The first independent variable is the number of trials. This has three levels (five trials, six trials or seven trials). The second independent variable is the amount of money earned per pump. This also has three levels (5p, 10p or 50p). The dependent variables in this study are the amount of money earned and how many times the balloon is popped.
+This study has a between-groups design with two independent variables. The first independent variable is the number of trials. This has three levels (five trials, six trials or seven trials). The second independent variable is the amount of money earned per pump. This also has three levels (5p, 10p or 50p). The dependent variables in this study are the amount of money earned and how many times the balloon is popped.
 
 **Procedure**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; First, participants will enter their participant ID. They will then provide their consent and demographical information. Next, they will be given a brief description of the balloon game and complete a tutorial. After the tutorial, they will be given the option to start the balloon game or replay the tutorial. Once the balloon game is over, they will be asked to rate how fun they found the game and how accurately it measures their risk-taking behaviour on a 5-point Likert scale. To help them with the latter question they will be presented with a line graph showing the number of times they pumped each balloon. After they give their feedback, they will be debriefed. 
+First, participants will enter their participant ID. They will then provide their consent and demographical information. Next, they will be given a brief description of the balloon game and complete a tutorial. After the tutorial, they will be given the option to start the balloon game or replay the tutorial. Once the balloon game is over, they will be asked to rate how fun they found the game and how accurately it measures their risk-taking behaviour on a 5-point Likert scale. To help them with the latter question they will be presented with a line graph showing the number of times they pumped each balloon. After they give their feedback, they will be debriefed. 
 
 <center><h2>Experimenter Manual</center></h2>
 
 <b><i>Running and editing the experiment</i></b>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Run [main.py](main.py) to start the experiment. Edit [experiment_config.py](experiment_config.py) to customise the experiment. This file mainly allows you to edit the conditions and control the balloon’s bobbing and inflating animations. Read the comments in the file for more info. 
+Run [main.py](main.py) to start the experiment. Edit [experiment_config.py](experiment_config.py) to customise the experiment. This file mainly allows you to edit the conditions and control the balloon’s bobbing and inflating animations. Read the comments in the file for more info. 
 
 <b><i>Output</i></b>
 
@@ -82,7 +82,3 @@
 ![condition tracker json](condition_tracker_JSON.png)
 
 *Note.* The JSON contains a dictionary with two dictionaries nested in it. The names of the nested dictionaries refer to an independet variable. The keys refer to a condition and the values represent the number of participants in them. 
-
-<center><h2>Noteworthy Parts</center></h2>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The most noteworthy parts are the animations and instructions. Getting the balloon to [inflate](inflate_animation.py) and [bob](bob_animation.py) “naturally” took a lot of fine turning. The [instructions](instructions.py) were also tricky to program as I had to learn how threading works to enable background processes to [display the labels sequentially](display_labels.py). Creating the [worker threads](worker_threads.py) for the instructions required a lot of planning as I had to carefully consider what kind of signals I wanted to emit and when to emit them. Finally, I think my [radio button classes](radio_btn_class.py) also deserve recognition as they allow the user to add more questions very easily. 
