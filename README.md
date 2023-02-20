@@ -1,5 +1,7 @@
 # Balloon Game README
 
+Click [here](demo.mp4) to see a video demonstration of the experiment. 
+
 <center><h2> Experimental Overview: </center></h2>
 
 
