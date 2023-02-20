@@ -29,7 +29,7 @@ Run [main.py](main.py) to start the experiment. Edit [experiment_config.py](expe
 <b><i>Output</i></b>
 
 <p style="line-height: 2em;">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The data is stored in a folder called Data. This will contain two files, “trial_data.csv” (see figure 1) and “participant_data.csv” (see figure 2). "trial_data.csv" contains the data from the balloon game. "participant_data.csv" contains the participants' demographical information alongside which conditions they were in and their feedback on the game. “condition tracker.json” keeps track of how many participants have been in each condition (see figure 3). 
+The data is stored in a folder called Data. This will contain two files, “trial_data.csv” (see figure 1) and “participant_data.csv” (see figure 2). "trial_data.csv" contains the data from the balloon game. "participant_data.csv" contains the participants' demographical information alongside which conditions they were in and their feedback on the game. “condition tracker.json” keeps track of how many participants have been in each condition (see figure 3). 
 </p>
 
 
